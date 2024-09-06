@@ -25,7 +25,7 @@ app.use("/shayxantohur",eighth)
 app.use("/yashnabod",ninth)
 app.use("/yunusobod",tenth)
 
-app.get("/", (req, res) => {
+app.get("/all", (req, res) => {
     const allData = [
         ...yakkasarayRestaurants,
         ...almazarRestaurants,
@@ -40,6 +40,9 @@ app.get("/", (req, res) => {
     ];
     res.json(allData);
 });
+app.get("/" , (req , res)=> {
+  res.send("please write valid url")
+})
 export const handler2 = ServerlessHttp(app);
 
 export const handler = async (event, context) => {
